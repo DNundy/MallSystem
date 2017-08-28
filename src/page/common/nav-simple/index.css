@@ -1,0 +1,18 @@
+/*
+* @Author: Administrator
+* @Date:   2017-08-04 21:21:12
+* @Last Modified by:   Administrator
+* @Last Modified time: 2017-08-05 11:39:10
+*/
+.nav-simple{
+	height: 60px;
+	line-height: 60px;
+	border-bottom: 1px solid #ddd;
+	background: #fff;
+}
+.nav-simple .logo{
+	font-size: 26px;
+	font-weight: bold;
+	color: #c60023;
+	text-decoration: none;
+}

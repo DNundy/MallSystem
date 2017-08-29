@@ -2,7 +2,7 @@
 * @Author: Administrator
 * @Date:   2017-08-03 17:56:02
 * @Last Modified by:   Administrator
-* @Last Modified time: 2017-08-28 08:46:44
+* @Last Modified time: 2017-08-29 22:02:28
 */
 
 /*导入基础模块*/
@@ -32,6 +32,7 @@ var config = {
 	entry : {
 		'index' 			: 	"./src/page/index/index.js",
 		'list' 				: 	"./src/page/list/index.js",
+		'cart' 				: 	"./src/page/cart/index.js",
 		'detail' 			: 	"./src/page/detail/index.js",
 		'user-login' 		: 	"./src/page/user-login/index.js",
 		'user-register' 	: 	"./src/page/user-register/index.js",
@@ -61,6 +62,7 @@ var config = {
 			filename : 	"js/common.js"
 		}),
 		new htmlWebpackPlugin(getHtmlConfig('index','首页')),
+		new htmlWebpackPlugin(getHtmlConfig('cart','购物车')),
 		new htmlWebpackPlugin(getHtmlConfig('list','商品列表页')),
 		new htmlWebpackPlugin(getHtmlConfig('detail','商品详情页')),
 		new htmlWebpackPlugin(getHtmlConfig('result','操作结果')),

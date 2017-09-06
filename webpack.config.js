@@ -2,7 +2,7 @@
 * @Author: Administrator
 * @Date:   2017-08-03 17:56:02
 * @Last Modified by:   Administrator
-* @Last Modified time: 2017-08-29 22:02:28
+* @Last Modified time: 2017-09-05 20:20:09
 */
 
 /*导入基础模块*/
@@ -17,8 +17,9 @@ var WEBPACK_ENV 		= process.env.WEBPACK_ENV || 'dev';
 /*获取html-webpack-plugin参数*/
 var getHtmlConfig 		= function (name,title) {
 	return {
-		filename : 		"view/" + name + ".html",
+		filename : 		"view/"+name + ".html",
 		template : 		"./src/view/" + name + ".html",
+		favicon : 		"./favicon.ico",
 		inject : 		"true",
 		hash : 			"true",
 		title : 		title,
@@ -40,12 +41,17 @@ var config = {
 		'user-center-update': 	"./src/page/user-center-update/index.js",
 		'user-pass-reset' 	: 	"./src/page/user-pass-reset/index.js",
         'user-pass-update'  : 	"./src/page/user-pass-update/index.js",
+        'order-confirm'  	: 	"./src/page/order-confirm/index.js",
+        'order-list'  		: 	"./src/page/order-list/index.js",
+        'order-detail'  	: 	"./src/page/order-detail/index.js",
+        'payment'  			: 	"./src/page/payment/index.js",
 		'result' 			: 	"./src/page/result/index.js",
+		'about' 			: 	"./src/page/about/index.js",
 		'common' 			: 	["./src/page/common/index.js"]
 	},
 	output : {
 		path : 			path.resolve(__dirname,"dist"),/*必须是绝对路径*/
-		publicPath : 	"/dist/",
+		publicPath : 	'/dist/',
 		filename : 		"js/[name].bundle.js"
 	},
 
@@ -71,7 +77,12 @@ var config = {
 		new htmlWebpackPlugin(getHtmlConfig('user-pass-reset','找回密码')),
 		new htmlWebpackPlugin(getHtmlConfig('user-pass-update', '修改密码')),
 		new htmlWebpackPlugin(getHtmlConfig('user-center','用户中心')),
-		new htmlWebpackPlugin(getHtmlConfig('user-center-update', '修改个人信息'))
+		new htmlWebpackPlugin(getHtmlConfig('user-center-update', '修改个人信息')),
+		new htmlWebpackPlugin(getHtmlConfig('order-confirm', '订单确认')),
+		new htmlWebpackPlugin(getHtmlConfig('order-list', '订单列表')),
+		new htmlWebpackPlugin(getHtmlConfig('order-detail', '订单详情')),
+		new htmlWebpackPlugin(getHtmlConfig('about', '关于我们')),
+		new htmlWebpackPlugin(getHtmlConfig('payment', '支付订单'))
 	],
 
 	resolve : {
@@ -118,7 +129,15 @@ var config = {
 		},
 		{	
 			test : /\.string$/,
-			use : [{loader: 'html-loader'}]
+			use : [
+				{
+					loader: 'html-loader',
+					options: {
+				        minimize: true,
+				        removeAttributeQuotes: false
+					}
+				}
+			]
 		}]
 	}
 

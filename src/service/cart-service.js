@@ -2,18 +2,17 @@
 * @Author: Administrator
 * @Date:   2017-08-29 15:36:23
 * @Last Modified by:   Administrator
-* @Last Modified time: 2017-08-29 16:09:26
+* @Last Modified time: 2017-09-04 12:33:14
 */
 'use strict';
-
 var _mm = require('util/util.js');
-
 var _cart = {
     // 获取购物车数量
     getCartCount : function(resolve, reject){
         _mm.request({
             url     : _mm.getServerUrl('/cart/get_cart_product_count.do'),
             success : resolve,
+            method  : 'GET',
             error   : reject
         });
     },
@@ -22,6 +21,7 @@ var _cart = {
         _mm.request({
             url     : _mm.getServerUrl('/cart/add.do'),
             data    : productInfo,
+            method  : 'GET',
             success : resolve,
             error   : reject
         });
@@ -30,6 +30,7 @@ var _cart = {
     getCartList : function(resolve, reject){
         _mm.request({
             url     : _mm.getServerUrl('/cart/list.do'),
+            method  : 'GET',
             success : resolve,
             error   : reject
         });
@@ -41,6 +42,7 @@ var _cart = {
             data    : {
                 productId : productId
             },
+            method  : 'GET',
             success : resolve,
             error   : reject
         });
@@ -52,6 +54,7 @@ var _cart = {
             data    : {
                 productId : productId
             },
+            method  : 'GET',
             success : resolve,
             error   : reject
         });
@@ -60,6 +63,7 @@ var _cart = {
     selectAllProduct : function(resolve, reject){
         _mm.request({
             url     : _mm.getServerUrl('/cart/select_all.do'),
+            method  : 'GET',
             success : resolve,
             error   : reject
         });
@@ -68,6 +72,7 @@ var _cart = {
     unselectAllProduct : function(resolve, reject){
         _mm.request({
             url     : _mm.getServerUrl('/cart/un_select_all.do'),
+            method  : 'GET',
             success : resolve,
             error   : reject
         });
@@ -77,6 +82,7 @@ var _cart = {
         _mm.request({
             url     : _mm.getServerUrl('/cart/update.do'),
             data    : productInfo,
+            method  : 'GET',
             success : resolve,
             error   : reject
         });
@@ -88,6 +94,7 @@ var _cart = {
             data    : {
                 productIds : productIds
             },
+            method  : 'GET',
             success : resolve,
             error   : reject
         });

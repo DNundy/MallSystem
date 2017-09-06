@@ -2,7 +2,7 @@
 * @Author: Administrator
 * @Date:   2017-08-22 13:37:35
 * @Last Modified by:   Administrator
-* @Last Modified time: 2017-08-22 17:35:47
+* @Last Modified time: 2017-09-05 20:34:26
 */
 'use strict';
 require('./index.css');
@@ -46,6 +46,7 @@ var page = {
                     _this.data.username = username;
                     _this.data.question = res;
                     _this.loadStepQuestion();
+                    console.log(res);
                 }, function(errMsg){
                     formError.show(errMsg);
                 });

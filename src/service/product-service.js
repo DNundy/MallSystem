@@ -2,12 +2,10 @@
 * @Author: Administrator
 * @Date:   2017-08-28 09:01:22
 * @Last Modified by:   Administrator
-* @Last Modified time: 2017-08-28 17:13:30
+* @Last Modified time: 2017-09-04 12:31:58
 */
 'use strict';
-
 var _mm = require('util/util.js');
-
 var _product = {
     // 获取商品列表
     getProductList : function(listParam, resolve, reject){
@@ -15,7 +13,7 @@ var _product = {
             url     : _mm.getServerUrl('/product/list.do'),
             data    : listParam,
             success : resolve,
-            method  : 'POST',
+            method  : 'GET',
             error   : reject
         });
     },
@@ -27,7 +25,7 @@ var _product = {
                 productId : productId
             },
             success : resolve,
-            method  : 'POST',
+            method  : 'GET',
             error   : reject
         });
     }

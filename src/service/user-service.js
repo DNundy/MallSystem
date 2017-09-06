@@ -2,13 +2,11 @@
 * @Author: Administrator
 * @Date:   2017-08-22 09:28:49
 * @Last Modified by:   Administrator
-* @Last Modified time: 2017-08-22 09:44:52
+* @Last Modified time: 2017-08-31 10:02:45
 */
 
 'use strict';
-
 var _mm = require('util/util.js');
-
 var _user = {
     // 用户登录
     login : function(userInfo, resolve, reject){

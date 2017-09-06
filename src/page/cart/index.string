@@ -85,6 +85,6 @@
 {{^notEmpty}}
 <p class="err-tip">
     <span>您的购物车空空如也，</span>
-    <a href="./index.html">立即去购物</a>
+    <a href="../index.html">立即去购物</a>
 </p>
 {{/notEmpty}}
